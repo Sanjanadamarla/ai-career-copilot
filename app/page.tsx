@@ -1,65 +1,133 @@
-import Image from "next/image";
+import Navbar from "../components/Navbar";
+
+const features = [
+    {
+        title: "Resume ATS Analysis",
+        description:
+            "Get a detailed ATS score, keyword analysis, and actionable suggestions.",
+    },
+    {
+        title: "Job Matching",
+        description:
+            "Compare your resume against job descriptions with semantic matching.",
+    },
+    {
+        title: "Cover Letter Generator",
+        description:
+            "Generate tailored cover letters in seconds using AI.",
+    },
+    {
+        title: "Mock Interviews",
+        description:
+            "Practice HR and technical interviews with instant feedback.",
+    },
+    {
+        title: "Learning Roadmaps",
+        description:
+            "Receive personalized week-by-week skill development plans.",
+    },
+    {
+        title: "Multi-Agent Workflow",
+        description:
+            "Specialized AI agents collaborate to solve complex career tasks.",
+    },
+];
+
+const stats = [
+    { value: "95%", label: "Resume Match Accuracy" },
+    { value: "10x", label: "Faster Application Prep" },
+    { value: "24/7", label: "AI Career Guidance" },
+    { value: "5", label: "Specialized AI Agents" },
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <>
+            <Navbar />
+
+            <main className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
+                {/* Hero Section */}
+                <section className="relative overflow-hidden px-6 py-24 md:py-32">
+                    <div className="mx-auto max-w-7xl text-center">
+                        {/* Badge */}
+                        <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300">
+                            ✨ Multi-Agent LLM Platform
+                        </div>
+
+                        {/* Heading */}
+                        <h1 className="mt-8 text-5xl font-extrabold leading-tight md:text-7xl lg:text-8xl">
+                            Your AI-Powered
+                            <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
+                Career Copilot
+              </span>
+                        </h1>
+
+                        {/* Description */}
+                        <p className="mx-auto mt-8 max-w-4xl text-lg leading-8 text-slate-300 md:text-2xl">
+                            Analyze resumes, match jobs, generate cover letters, practice
+                            interviews, and receive personalized learning roadmaps — all powered
+                            by advanced LLM agents.
+                        </p>
+
+                        {/* Buttons */}
+                        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                            <button className="rounded-2xl bg-blue-600 px-8 py-4 text-lg font-semibold shadow-lg shadow-blue-500/25 transition hover:scale-105 hover:bg-blue-700">
+                                Get Started Free
+                            </button>
+
+                            <button className="rounded-2xl border border-slate-600 bg-slate-900/50 px-8 py-4 text-lg font-semibold transition hover:bg-slate-800">
+                                Watch Demo
+                            </button>
+                        </div>
+
+                        {/* Stats */}
+                        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                            {stats.map((stat) => (
+                                <div
+                                    key={stat.label}
+                                    className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur"
+                                >
+                                    <div className="text-3xl font-bold text-blue-400">
+                                        {stat.value}
+                                    </div>
+                                    <div className="mt-2 text-sm text-slate-400">
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Features Section */}
+                <section id="features" className="px-6 pb-24">
+                    <div className="mx-auto max-w-7xl">
+                        <h2 className="text-center text-4xl font-bold md:text-5xl">
+                            Powerful AI Features
+                        </h2>
+
+                        <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-slate-400">
+                            Everything you need to accelerate your career journey.
+                        </p>
+
+                        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                            {features.map((feature) => (
+                                <div
+                                    key={feature.title}
+                                    className="group rounded-3xl border border-slate-800 bg-slate-900/60 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10"
+                                >
+                                    <h3 className="text-2xl font-semibold text-white">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="mt-4 leading-7 text-slate-400">
+                                        {feature.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </>
+    );
 }
